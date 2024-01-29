@@ -351,7 +351,7 @@ fun DownloadTask.spChannel(): Channel<DownloadProgress> {
     val progressListener = createListener1(
         progress = { task, currentOffset, totalLength ->
             if (channelClosed.get()) return@createListener1
-            channel.offer(DownloadProgress(task, currentOffset, totalLength))
+            channel.trySend(DownloadProgress(task, currentOffset, totalLength))
         }
     ) { _, _, _, _ ->
         channelClosed.set(true)

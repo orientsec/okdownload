@@ -25,14 +25,14 @@ android {
 }
 
 dependencies {
-    testImplementation dep.junit
-    testImplementation dep.mockk
-    testImplementation dep.assertj
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "org.assertj:assertj-core:$assertjVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
     testImplementation project(':okdownload')
-    testImplementation dep.robolectric
 
-    implementation dep.kotlin
-    implementation dep.kotlinxCoroutines
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     compileOnly project(':okdownload')
 }
 
@@ -46,7 +46,6 @@ tasks.withType(Javadoc).all {
     dependsOn dokka
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
 if (hasProperty("isCI")) {
     apply from: rootProject.file('gradle/codecov.gradle')
 }

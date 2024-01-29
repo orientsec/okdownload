@@ -19,8 +19,8 @@ package com.liulishuo.filedownloader;
 import android.app.Application;
 import android.app.Notification;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.liulishuo.filedownloader.model.FileDownloadStatus;
 import com.liulishuo.filedownloader.services.DownloadMgrInitialParams;

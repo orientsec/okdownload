@@ -433,6 +433,6 @@ public class UtilTest {
         verify(connection).addHeader(keyCaptor.capture(), valueCaptor.capture());
 
         assertThat(keyCaptor.getValue()).isEqualTo(USER_AGENT);
-        assertThat(valueCaptor.getValue()).isEqualTo("OkDownload/" + BuildConfig.VERSION_NAME);
+        assertThat(valueCaptor.getValue()).isEqualTo("OkDownload");
     }
 }

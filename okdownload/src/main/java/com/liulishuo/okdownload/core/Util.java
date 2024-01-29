@@ -27,8 +27,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.StatFs;
 import android.provider.OpenableColumns;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.liulishuo.okdownload.BuildConfig;
@@ -452,7 +452,7 @@ public class Util {
     }
 
     public static void addDefaultUserAgent(@NonNull final DownloadConnection connection) {
-        final String userAgent = "OkDownload/" + BuildConfig.VERSION_NAME;
+        final String userAgent = "OkDownload";
         connection.addHeader(USER_AGENT, userAgent);
     }
 }

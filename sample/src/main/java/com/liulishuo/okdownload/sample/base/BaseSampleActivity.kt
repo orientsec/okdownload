@@ -3,10 +3,10 @@ package com.liulishuo.okdownload.sample.base
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.annotation.StringRes
-import android.support.v7.app.AppCompatActivity
+import androidx.annotation.StringRes
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.liulishuo.okdownload.sample.R
 
 abstract class BaseSampleActivity : AppCompatActivity() {

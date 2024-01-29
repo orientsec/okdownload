@@ -19,13 +19,13 @@ package com.liulishuo.okdownload.sample;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
+import androidx.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.SpeedCalculator;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;

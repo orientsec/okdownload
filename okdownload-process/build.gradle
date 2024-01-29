@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-    testImplementation dep.junit
-    testImplementation dep.mockito
-    testImplementation dep.assertj
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "org.assertj:assertj-core:$assertjVersion"
 }

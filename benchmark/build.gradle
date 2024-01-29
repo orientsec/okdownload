@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-parcelize'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -23,7 +23,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
         vectorDrawables.useSupportLibrary = true
     }
@@ -36,11 +36,11 @@ android {
 }
 
 dependencies {
-    implementation dep.kotlin
+    testImplementation "junit:junit:$junitVersion"
 
-    implementation dep.supportV7
-    implementation dep.supportDesign
-    implementation dep.supportConstraintLayout
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    testImplementation dep.junit
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "com.google.android.material:material:1.11.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
 }

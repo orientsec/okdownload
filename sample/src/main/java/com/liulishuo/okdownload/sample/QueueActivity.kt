@@ -17,12 +17,12 @@
 package com.liulishuo.okdownload.sample
 
 import android.os.Bundle
-import android.support.v7.widget.AppCompatRadioButton
-import android.support.v7.widget.CardView
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatRadioButton
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import com.liulishuo.okdownload.kotlin.listener.createDownloadContextListener
 import com.liulishuo.okdownload.sample.base.BaseSampleActivity

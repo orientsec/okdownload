@@ -20,7 +20,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
 import android.os.SystemClock
-import android.support.annotation.IdRes
+import androidx.annotation.IdRes
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar

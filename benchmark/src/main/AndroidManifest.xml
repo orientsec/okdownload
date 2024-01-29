@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme"
         android:fullBackupContent="@xml/backup_descriptor">
         <activity
-            android:name=".MainActivity"
+            android:name="cn.dreamtobe.okdownload.benchmark.MainActivity"
+            android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

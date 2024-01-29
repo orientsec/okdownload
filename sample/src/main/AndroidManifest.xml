@@ -30,6 +30,7 @@
         tools:targetApi="n">
         <activity
             android:name=".MainActivity"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -40,12 +41,25 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SingleActivity" />
-        <activity android:name=".QueueActivity" />
-        <activity android:name=".EachBlockProgressActivity" />
-        <activity android:name=".BunchActivity" />
-        <activity android:name=".ContentUriActivity" />
-        <activity android:name=".NotificationActivity" />
+        <activity
+            android:name=".SingleActivity"
+
+            android:exported="false" />
+        <activity
+            android:name=".QueueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EachBlockProgressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BunchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ContentUriActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
     </application>
     <!-- When you invoke BaseDownloadTask#setWifiRequired(true), you need declare ACCESS_NETWORK_STATE permission -->
     <!-- The permission of ACCESS_NETWORK_STATE is not required, but if you add this permission we will check whether network is valid before start it-->

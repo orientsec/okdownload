@@ -19,18 +19,17 @@ android {
 }
 
 dependencies {
-    testImplementation dep.junit
-    testImplementation dep.mockito
-    testImplementation dep.assertj
-    testImplementation dep.robolectric
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "org.assertj:assertj-core:$assertjVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
     testImplementation project(':okdownload')
     
-    implementation dep.supportAnnotations
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
 
     compileOnly project(':okdownload')
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
 if (hasProperty("isCI")) {
     apply from: rootProject.file('gradle/codecov.gradle')
 }

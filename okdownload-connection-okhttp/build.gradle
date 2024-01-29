@@ -21,18 +21,17 @@ android {
 }
 
 dependencies {
-    testImplementation dep.junit
-    testImplementation dep.mockito
-    testImplementation dep.assertj
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "org.assertj:assertj-core:$assertjVersion"
     testImplementation project(':okdownload')
 
     compileOnly project(':okdownload')
 
-    implementation dep.okhttp3
-    implementation dep.supportAnnotations
+    implementation "com.squareup.okhttp3:okhttp:4.12.0"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
 if (hasProperty("isCI")) {
     apply from: rootProject.file('gradle/codecov.gradle')
 }
