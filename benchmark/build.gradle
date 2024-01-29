@@ -2,19 +2,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk rootProject.ext.compileSdkVersion
 
     compileOptions {
         sourceCompatibility rootProject.ext.sourceCompatibilityVersion
         targetCompatibility rootProject.ext.targetCompatibilityVersion
     }
 
-    lintOptions {
-        lintConfig file('lint.xml')
-        textOutput 'stdout'
-        textReport true
-    }
 
     defaultConfig {
         applicationId "com.liulishuo.okdownload.benchmark"
@@ -32,6 +26,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    namespace 'com.liulishuo.okdownload.benchmark'
+    lint {
+        lintConfig file('lint.xml')
+        textOutput file('stdout')
+        textReport true
     }
 }
 

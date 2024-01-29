@@ -1,21 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
-
-    defaultConfig {
-        versionName VERSION_NAME as String
-    }
+    compileSdk rootProject.ext.compileSdkVersion
 
     compileOptions {
         sourceCompatibility rootProject.ext.sourceCompatibilityVersion
         targetCompatibility rootProject.ext.targetCompatibilityVersion
     }
 
-    dexOptions {
-        preDexLibraries = !rootProject.ext.isCi
-    }
+    namespace 'com.liulishuo.okdownload'
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -29,8 +22,4 @@ dependencies {
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
     implementation "androidx.annotation:annotation:1.7.1"
     compileOnly "com.google.code.findbugs:annotations:3.0.1"
-}
-
-if (hasProperty("isCI")) {
-    apply from: rootProject.file('gradle/codecov.gradle')
 }

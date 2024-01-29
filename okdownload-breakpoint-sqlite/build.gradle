@@ -1,21 +1,18 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk rootProject.ext.compileSdkVersion
 
     compileOptions {
         sourceCompatibility rootProject.ext.sourceCompatibilityVersion
         targetCompatibility rootProject.ext.targetCompatibilityVersion
     }
 
-    dexOptions {
-        preDexLibraries = !rootProject.ext.isCi
-    }
-
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
     }
+
+    namespace 'com.liulishuo.okdownload.sqlite'
 }
 
 dependencies {
@@ -26,8 +23,4 @@ dependencies {
     testImplementation project(':okdownload')
     implementation "androidx.annotation:annotation:1.7.1"
     compileOnly project(':okdownload')
-}
-
-if (hasProperty("isCI")) {
-    apply from: rootProject.file('gradle/codecov.gradle')
 }
