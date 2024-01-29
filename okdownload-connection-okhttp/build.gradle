@@ -29,7 +29,7 @@ dependencies {
     compileOnly project(':okdownload')
 
     implementation "com.squareup.okhttp3:okhttp:4.12.0"
-    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.annotation:annotation:1.7.1"
 }
 
 if (hasProperty("isCI")) {
