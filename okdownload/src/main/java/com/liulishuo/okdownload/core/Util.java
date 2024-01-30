@@ -27,11 +27,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.StatFs;
 import android.provider.OpenableColumns;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import android.util.Log;
 
-import com.liulishuo.okdownload.BuildConfig;
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.OkDownload;
 import com.liulishuo.okdownload.core.breakpoint.BlockInfo;
@@ -94,13 +95,21 @@ public class Util {
     }
 
     public static class EmptyLogger implements Logger {
-        @Override public void e(String tag, String msg, Exception e) { }
+        @Override
+        public void e(String tag, String msg, Exception e) {
+        }
 
-        @Override public void w(String tag, String msg) { }
+        @Override
+        public void w(String tag, String msg) {
+        }
 
-        @Override public void d(String tag, String msg) { }
+        @Override
+        public void d(String tag, String msg) {
+        }
 
-        @Override public void i(String tag, String msg) { }
+        @Override
+        public void i(String tag, String msg) {
+        }
     }
 
     @SuppressWarnings("PMD.LoggerIsNotStaticFinal")
@@ -377,14 +386,18 @@ public class Util {
         return uri.getScheme().equals(ContentResolver.SCHEME_FILE);
     }
 
-    @Nullable public static String getFilenameFromContentUri(@NonNull Uri contentUri) {
+    @Nullable
+    public static String getFilenameFromContentUri(@NonNull Uri contentUri) {
         final ContentResolver resolver = OkDownload.with().context().getContentResolver();
         final Cursor cursor = resolver.query(contentUri, null, null, null, null);
         if (cursor != null) {
             try {
                 cursor.moveToFirst();
-                return cursor
-                        .getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+                int index = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+                if (index == -1) {
+                    return null;
+                }
+                return cursor.getString(index);
             } finally {
                 cursor.close();
             }
@@ -394,7 +407,8 @@ public class Util {
     }
 
     @SuppressFBWarnings(value = "DMI")
-    @NonNull public static File getParentFile(final File file) {
+    @NonNull
+    public static File getParentFile(final File file) {
         final File candidate = file.getParentFile();
         return candidate == null ? new File("/") : candidate;
     }
@@ -405,8 +419,11 @@ public class Util {
         if (cursor != null) {
             try {
                 cursor.moveToFirst();
-                return cursor
-                        .getLong(cursor.getColumnIndex(OpenableColumns.SIZE));
+                int index = cursor.getColumnIndex(OpenableColumns.SIZE);
+                if (index == -1) {
+                    return 0;
+                }
+                return cursor.getLong(index);
             } finally {
                 cursor.close();
             }

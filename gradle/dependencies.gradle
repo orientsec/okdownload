@@ -2,8 +2,8 @@ ext {
     compileSdkVersion = 34
     minSdkVersion = 21
     targetSdkVersion = 31
-    sourceCompatibilityVersion = JavaVersion.VERSION_1_8
-    targetCompatibilityVersion = JavaVersion.VERSION_1_8
+    sourceCompatibilityVersion = JavaVersion.VERSION_17
+    targetCompatibilityVersion = JavaVersion.VERSION_17
     kotlin_version = '1.9.10'
     anko_version = '0.10.1'
     coroutines_version = '1.7.3'
