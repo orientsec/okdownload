@@ -1,0 +1,53 @@
+[versions]
+androidGradlePlugin = "8.2.2"
+ankoSdk25 = "0.10.1"
+annotation = "1.7.1"
+annotations = "3.0.1"
+assertjVersion = "2.8.0"
+constraintlayout = "2.1.4"
+dokkaGradlePlugin = "1.9.10"
+junitVersion = "4.13.2"
+kotlinGradlePlugin = "1.9.10"
+material = "1.11.0"
+mockitoVersion = "4.8.0"
+robolectricVersion = "4.11.1"
+kotlinVersion = '1.9.21'
+coroutinesVersion = '1.7.3'
+gradlePlugin-dokka = "1.9.10"
+okhttpVersion = "4.12.0"
+appcompatVersion = "1.6.1"
+
+[libraries]
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
+anko-appcompat-v7 = { module = "org.jetbrains.anko:anko-appcompat-v7", version.ref = "ankoSdk25" }
+anko-appcompat-v7-commons = { module = "org.jetbrains.anko:anko-appcompat-v7-commons", version.ref = "ankoSdk25" }
+anko-cardview-v7 = { module = "org.jetbrains.anko:anko-cardview-v7", version.ref = "ankoSdk25" }
+anko-coroutines = { module = "org.jetbrains.anko:anko-coroutines", version.ref = "ankoSdk25" }
+anko-design = { module = "org.jetbrains.anko:anko-design", version.ref = "ankoSdk25" }
+anko-recyclerview-v7 = { module = "org.jetbrains.anko:anko-recyclerview-v7", version.ref = "ankoSdk25" }
+anko-design-coroutines = { module = "org.jetbrains.anko:anko-design-coroutines", version.ref = "ankoSdk25" }
+anko-recyclerview-v7-coroutines = { module = "org.jetbrains.anko:anko-recyclerview-v7-coroutines", version.ref = "ankoSdk25" }
+anko-sdk25 = { module = "org.jetbrains.anko:anko-sdk25", version.ref = "ankoSdk25" }
+anko-sdk25-coroutines = { module = "org.jetbrains.anko:anko-sdk25-coroutines", version.ref = "ankoSdk25" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinVersion" }
+annotation = { module = "androidx.annotation:annotation", version.ref = "annotation" }
+annotations = { module = "com.google.code.findbugs:annotations", version.ref = "annotations" }
+assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertjVersion" }
+junit = { module = "junit:junit", version.ref = "junitVersion" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutinesVersion" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoVersion" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectricVersion" }
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlinVersion" }
+kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
+gradlePlugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "gradlePlugin-dokka" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref ="okhttpVersion"}
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref ="appcompatVersion"}
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinGradlePlugin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaGradlePlugin" }
+common-library = { id = "okdownload.android.library", version = "unspecified"}

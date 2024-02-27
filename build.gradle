@@ -1,43 +1,4 @@
-subprojects {
-    buildscript {
-        repositories {
-            maven { url 'https://maven.aliyun.com/repository/public' }
-            google()
-            mavenCentral()
-        }
-    }
-    repositories {
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        google()
-        mavenCentral()
-    }
-
-    group = GROUP
-    version = VERSION_NAME
+plugins {
+//    alias libs.plugins.android.application apply false
+//    alias libs.plugins.android.library apply false
 }
-
-apply from: rootProject.file('gradle/dependencies.gradle')
-
-buildscript {
-    repositories {
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        google()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10"
-        classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.10.0"
-    }
-}
-
-allprojects {
-    repositories {
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        google()
-    }
-}
-
-tasks.register('clean', Delete) {
-    delete rootProject.buildDir
-}
-
