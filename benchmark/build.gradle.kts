@@ -1,5 +1,5 @@
 plugins {
-    id("okdownload.android.app")
+    alias(libs.plugins.okdownload.app)
 }
 android {
     namespace = "com.liulishuo.okdownload.benchmark"

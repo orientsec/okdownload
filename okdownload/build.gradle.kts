@@ -1,5 +1,5 @@
 plugins {
-    id("okdownload.android.library")
+    alias(libs.plugins.okdownload.library)
 }
 
 android {

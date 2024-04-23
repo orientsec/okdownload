@@ -17,13 +17,14 @@ project(":sqlite").projectDir = File(settingsDir, "okdownload-breakpoint-sqlite"
 project(":kotlin").projectDir = File(settingsDir, "okdownload-kotlin-enhance")
 project(":filedownloader").projectDir = File(settingsDir, "okdownload-filedownloader")
 
-//pluginManagement {
-//    repositories {
-//        maven(url = "https://maven.aliyun.com/repository/public")
-//        google()
-//        mavenCentral()
-//    }
-//}
+pluginManagement {
+    includeBuild("build-logic")
+    repositories {
+        maven(url = "https://maven.aliyun.com/repository/public")
+        google()
+        mavenCentral()
+    }
+}
 
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)

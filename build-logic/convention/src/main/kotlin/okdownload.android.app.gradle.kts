@@ -13,16 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import org.gradle.accessors.dm.LibrariesForLibs
 
-dependencyResolutionManagement {
-    repositories {
-        maven(url = "https://maven.aliyun.com/repository/public")
-        google()
-        mavenCentral()
+val libs = the<LibrariesForLibs>()
+
+plugins {
+    id("com.android.application")
+    id("kotlin-android")
+    id("kotlin-parcelize")
+}
+
+android {
+    compileSdk = 34
+
+    compileOptions {
+        sourceCompatibility =  JavaVersion.VERSION_18
+        targetCompatibility = JavaVersion.VERSION_18
     }
-    versionCatalogs {
-        create("libs") {
-            from(files("../gradle/libs.versions.toml"))
-        }
+
+    defaultConfig {
+        minSdk = 21
+        targetSdk = 34
     }
+}
+
+dependencies {
+    testImplementation(libs.junit)
 }

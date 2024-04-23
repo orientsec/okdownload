@@ -1,6 +1,6 @@
 plugins {
-    id("okdownload.android.library")
-    id("org.jetbrains.dokka")
+    alias(libs.plugins.okdownload.library)
+    alias(libs.plugins.dokka)
 }
 
 android {

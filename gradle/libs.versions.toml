@@ -50,4 +50,5 @@ android-application = { id = "com.android.application", version.ref = "androidGr
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinGradlePlugin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokkaGradlePlugin" }
-common-library = { id = "okdownload.android.library", version = "unspecified"}
+okdownload-library = { id = "okdownload.android.library", version = "unspecified"}
+okdownload-app = { id = "okdownload.android.app", version = "unspecified"}
